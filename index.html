@@ -5,64 +5,22 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
+     <link rel="stylesheet" href="styles/style.css">
  </head>
  <body>
+     <div class="title">ROCK, PAPER, SCISSORS</div>
+     <div class="btn-container">
      
+        <button id="rock">rock</button>
+        <button id="paper">paper</button>
+        <button id ="scissor">scissor</button>
+
+     </div>
+     <div class="results">
+
+     </div>
+
  </body>
  </html>
 
- <script>
-    computerPlay = () => {
-
-        let move = Math.floor(Math.random()*3)
-        if (move===0) return "rock";
-        else if (move===1) return "paper";
-        else return "scissor";
-
-     };
-
-
-    playRound = (computerSelection,playerSelection) => {
-
-        if (playerSelection == computerSelection) return "Tie!";
-
-        if (
-            playerSelection == "rock" && computerSelection == "paper"
-            ||
-            playerSelection == "scissor" && computerSelection == "rock"
-            ||
-            playerSelection == "paper" && computerSelection == "scissor"
-        ) return "you lose!"
-
-        else return "you win!"
-
-    }
-
- 
-
-    Game = () => {
-
-        let playerWins = 0;
-        let computerWins = 0;
-
-        for (let i = 0; i < 5; i++) {
-
-            let playerSelection = prompt("Choose your play: ").toLowerCase();
-            let computerSelection = computerPlay();
-            let winner = playRound(computerSelection,playerSelection);
-            console.log(winner);
-            if (winner == "you win!") playerWins++;
-            else if (winner == "you lose!") computerWins++;
-
-        }
-
-        return ( 
-
-            (playerWins == computerWins) ? "It's a tie!" :
-            (playerWins > computerWins) ? "You win the game!" : "You lose the game!"
-            
-        );
-    }
-
-    console.log(Game());
- </script>
+ <script src= script.js> </script>
